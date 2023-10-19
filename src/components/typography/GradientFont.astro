@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+  bold: true | false;
+}
+
+const { class: className, bold = true } = Astro.props;
+---
+
+<span class:list={[className, { 'font-medium': bold }, "bg-clip-text bg-gradient-to-r from-blue-500 via-purple-400 to-blue-500"]}><slot /></span>
+
+<style>
+  span {
+    background-size: 200% auto;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 15s linear infinite;
+  }
+
+  @keyframes textclip {
+    100% {
+      background-position: 200% center;
+    }
+  }
+</style>

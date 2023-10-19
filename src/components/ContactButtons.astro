@@ -1,0 +1,30 @@
+---
+const buttons = [
+  { display: 'ich@carldressler.de', href: 'mailto:ich@carldressler.de'},
+  { display: 'cstmth', href: 'https://github.com'}
+]
+---
+
+<div class="flex gap-4">
+  {buttons.map((button) => (
+    <a
+      class="grow basis-full text-center p-4 border-solid border-slate-900/30 border-[1px] rounded-lg hover:border-transparent hover:text-white hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-400 hover:to-blue-500"
+      href={button.href}
+    >
+      {button.display}
+    </a>
+  ))}
+</div>
+
+<style>
+  a:hover {
+    background-size: 200% auto;
+    animation: textclip 15s linear infinite;
+  }
+
+  @keyframes textclip {
+    100% {
+      background-position: 200% center;
+    }
+  }
+</style>

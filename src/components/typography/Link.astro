@@ -1,0 +1,13 @@
+---
+import InlineBody from "./InlineBody.astro";
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href}>
+  <slot/>
+</a>
